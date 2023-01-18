@@ -1,0 +1,14 @@
+﻿{
+  "Id": "uQ9arpqCB0efBfLMsk8N_w",
+  "Reference": "JHRYdvykUkSCvY4zcWU7cQ/uQ9arpqCB0efBfLMsk8N_w",
+  "ParentRef": "JHRYdvykUkSCvY4zcWU7cQ/1-6mCIc85UK8JSoDrCd1sw",
+  "Name": "Check App State 'list'",
+  "Type": "Element",
+  "TaxonomyType": "Listbox",
+  "Created": "2023-01-12T16:23:08.5627792Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=22.10.3.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=22.10.2.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-01-12T16:23:08.5627792Z"
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Id": "8c-0ha9jOESN-_euxTUcgQ",
+  "Reference": "JHRYdvykUkSCvY4zcWU7cQ/8c-0ha9jOESN-_euxTUcgQ",
+  "ParentRef": "JHRYdvykUkSCvY4zcWU7cQ/Fc1A5Gnw2kuzc47xj9QEKw",
+  "Name": "Find",
+  "Type": "Screen",
+  "Created": "2023-01-12T16:20:04.7449762Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=22.10.2.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-01-12T16:20:15.4562032Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=22.10.2.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
