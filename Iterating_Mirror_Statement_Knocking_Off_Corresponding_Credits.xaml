@@ -1,7 +1,7 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Iterating_Mirror_Statement_Knocking_Off_Corresponding_Credits" this:Iterating_Mirror_Statement_Knocking_Off_Corresponding_Credits.In_CITRIX_File="C:\Users\RPA\Desktop\TestFolder\CITIBANK PROFITS STATEMENT 27 OCT 2022.xlsx" this:Iterating_Mirror_Statement_Knocking_Off_Corresponding_Credits.In_Amount="1,000,000" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="In_CITRIX_File" Type="InArgument(x:String)" />
-    <x:Property Name="out_Flag" Type="OutArgument(x:String)" />
+    <x:Property Name="out_Flag" Type="OutArgument(x:Boolean)" />
     <x:Property Name="In_Amount" Type="InArgument(x:String)" />
     <x:Property Name="In_Ref" Type="InArgument(x:String)" />
     <x:Property Name="In_Ref1" Type="InArgument(x:String)" />
@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1434,4820</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1434,4612</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Iterating_Mirror_Statement_Knocking_Off_Corresponding_Credits_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="80">
@@ -113,31 +113,31 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Iterating_Mirror_Statement_Knocking_Off_Corresponding_Credits" sap:VirtualizedContainerService.HintSize="1444,4755" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Iterating_Mirror_Statement_Knocking_Off_Corresponding_Credits" sap:VirtualizedContainerService.HintSize="1444,4547" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="1382,4633" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="1382,4425" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1348,4537" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1348,4329" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="1286,4415" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" TemplatePath="C:\Users\RPA\Desktop\TestFolder\CITIBANK PROFITS STATEMENT 27 OCT 2022.xlsx" UseTemplate="True" WorkbookPath="[In_CITRIX_File]">
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="1286,4207" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" TemplatePath="C:\Users\RPA\Desktop\TestFolder\CITIBANK PROFITS STATEMENT 27 OCT 2022.xlsx" UseTemplate="True" WorkbookPath="[In_CITRIX_File]">
               <ueab:ExcelApplicationCard.Body>
                 <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1252,4114" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1252,3866" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -156,9 +156,9 @@
                       </uix:NTypeInto.Target>
                     </uix:NTypeInto>
                     <uix:NKeyboardShortcuts ActivateBefore="False" ClickBeforeMode="None" DelayAfter="0" DelayBefore="0" DelayBetweenKeys="0" DelayBetweenShortcuts="0.2" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="1190,188" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" InScope="[Excel]" InteractionMode="WindowMessages" ScopeIdentifier="Excel" Shortcuts="[d(hk)][k(tab)][u(hk)][d(hk)][k(tab)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V3" />
-                    <uix:NCheckState DisplayName="Check App State 'Sheet'" sap:VirtualizedContainerService.HintSize="1190,3269" sap2010:WorkflowViewState.IdRef="NCheckState_1" InScope="[Excel]" ScopeIdentifier="Excel" Timeout="0.2" Version="V3">
+                    <uix:NCheckState DisplayName="Check App State 'Sheet'" sap:VirtualizedContainerService.HintSize="1190,3021" sap2010:WorkflowViewState.IdRef="NCheckState_1" InScope="[Excel]" ScopeIdentifier="Excel" Timeout="0.2" Version="V3">
                       <uix:NCheckState.IfExists>
-                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="736,3043" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="736,2795" sap2010:WorkflowViewState.IdRef="Sequence_4">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
                             <Variable x:TypeArguments="x:String" Name="CellADR" />
@@ -175,13 +175,13 @@
                             </uix:NExtractData.Target>
                           </uix:NExtractData>
                           <ui:CloseWindow TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'excel.exe Find'" sap:VirtualizedContainerService.HintSize="674,116" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="9d2ce0a2205983b5c0b5a004dc0a13e2" Selector="&lt;wnd app='excel.exe' cls='bosa_sdm_XL9' title='Find and Replace' /&gt;" WaitForReady="INTERACTIVE" />
-                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="674,2557" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="674,2309" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                             <ui:ForEachRow.Body>
                               <ActivityAction x:TypeArguments="sd:DataRow">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="640,2431" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="640,2183" sap2010:WorkflowViewState.IdRef="Sequence_6">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:String" Name="strComments" />
                                     <Variable x:TypeArguments="x:String" Name="strComments1" />
@@ -257,7 +257,15 @@
                                       <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(strComments,In_Ref ).ToString]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <If Condition="[strComments = In_Ref OR strComments1.Contains(&quot;BOU&quot;) = true OR strComments1.Contains(&quot;FX-00000561&quot;) = true OR strComments1 = In_Ref1]" sap:VirtualizedContainerService.HintSize="578,1086" sap2010:WorkflowViewState.IdRef="If_1">
+                                  <Assign sap:VirtualizedContainerService.HintSize="578,71" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[strComments1]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(strComments1,In_Ref1 ).ToString]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <If Condition="[strComments = In_Ref OR strComments.Contains(&quot;BOU&quot;) = true OR strComments.Contains(&quot;FX-00000561&quot;) = true OR strComments1 = In_Ref1]" sap:VirtualizedContainerService.HintSize="578,727" sap2010:WorkflowViewState.IdRef="If_1">
                                     <If.Then>
                                       <Sequence sap:VirtualizedContainerService.HintSize="496,451" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                         <sap:WorkflowViewStateService.ViewState>
@@ -267,10 +275,10 @@
                                         </sap:WorkflowViewStateService.ViewState>
                                         <Assign sap:VirtualizedContainerService.HintSize="434,70" sap2010:WorkflowViewState.IdRef="Assign_6">
                                           <Assign.To>
-                                            <OutArgument x:TypeArguments="x:String">[out_Flag]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Boolean">[out_Flag]</OutArgument>
                                           </Assign.To>
                                           <Assign.Value>
-                                            <InArgument x:TypeArguments="x:String">True</InArgument>
+                                            <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                                           </Assign.Value>
                                         </Assign>
                                         <ueab:DeleteRowsX DeleteRowsOption="Specific" DisplayName="Delete Rows" HasHeaders="True" sap:VirtualizedContainerService.HintSize="434,147" sap2010:WorkflowViewState.IdRef="DeleteRowsX_1" Range="[Excel.Sheet(&quot;Account Statement&quot;)]" RowPositions="[rowADR.ToString]" />
@@ -278,22 +286,12 @@
                                       </Sequence>
                                     </If.Then>
                                     <If.Else>
-                                      <Sequence sap:VirtualizedContainerService.HintSize="496,472" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                      <Sequence sap:VirtualizedContainerService.HintSize="400,113" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Account Statement&quot;).Cell(&quot;R&quot;+rowADR.ToString)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[&quot;Conflicting_Reference&quot;]" />
-                                        <Assign sap:VirtualizedContainerService.HintSize="434,70" sap2010:WorkflowViewState.IdRef="Assign_9">
-                                          <Assign.To>
-                                            <OutArgument x:TypeArguments="x:String">[out_Flag]</OutArgument>
-                                          </Assign.To>
-                                          <Assign.Value>
-                                            <InArgument x:TypeArguments="x:String">NotSure</InArgument>
-                                          </Assign.Value>
-                                        </Assign>
-                                        <ui:Break sap:VirtualizedContainerService.HintSize="434,32" sap2010:WorkflowViewState.IdRef="Break_2" />
                                       </Sequence>
                                     </If.Else>
                                   </If>

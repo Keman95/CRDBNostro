@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1186,5407</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1186,5297</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Reconcililinig_Mirror_Account_Statements_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="38">
@@ -110,31 +110,31 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Reconcililinig_Mirror_Account_Statements" sap:VirtualizedContainerService.HintSize="1196,5342" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Reconcililinig_Mirror_Account_Statements" sap:VirtualizedContainerService.HintSize="1196,5232" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="1134,5220" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="1134,5110" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1100,5124" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1100,5014" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="1038,5002" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" TemplatePath="C:\Users\RPA\Desktop\TestFolder\NOSTRO RECO 26TH OCT 2022.xlsx" WorkbookPath="[in_FilePath]">
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="1038,4892" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" TemplatePath="C:\Users\RPA\Desktop\TestFolder\NOSTRO RECO 26TH OCT 2022.xlsx" WorkbookPath="[in_FilePath]">
               <ueab:ExcelApplicationCard.Body>
                 <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1004,4724" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1004,4614" sap2010:WorkflowViewState.IdRef="Sequence_2">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Default="[in_FilePath]" Name="workbook" />
                     </Sequence.Variables>
@@ -143,14 +143,13 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Go to Section &quot;Their Credits Not Yet Passed By Us&quot;" sap:VirtualizedContainerService.HintSize="942,4602" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence DisplayName="Go to Section &quot;Their Credits Not Yet Passed By Us&quot;" sap:VirtualizedContainerService.HintSize="942,4492" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="strCellAdr" />
                         <Variable x:TypeArguments="x:String" Name="strrowAddr" />
                         <Variable x:TypeArguments="x:Int32" Name="rowAddr" />
                         <Variable x:TypeArguments="x:String" Default="CITIUSD" Name="sheet" />
                         <Variable x:TypeArguments="x:String" Default="THEIR CREDIT NOT YET PASSED BY US" Name="Section" />
-                        <Variable x:TypeArguments="x:Int32" Name="rowADR1" />
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -181,14 +180,6 @@
                         </Assign.To>
                         <Assign.Value>
                           <InArgument x:TypeArguments="x:Int32">[rowAddr+1]</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="880,70" sap2010:WorkflowViewState.IdRef="Assign_16">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:Int32">[rowADR1]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:Int32">[rowAddr]</InArgument>
                         </Assign.Value>
                       </Assign>
                       <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="False" sap:VirtualizedContainerService.HintSize="880,3143" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_1" Range="[Excel.Sheet(In_Sheet).Range(&quot;A&quot;+rowAddr.ToString+&quot;:C1000&quot;)]" SaveAfterEachRow="True">
@@ -387,7 +378,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ueab:ExcelForEachRowX>
-                      <ueab:FilterX ClearFilter="False" ColumnName="[Excel.Sheet(Sheet).Cell(&quot;E&quot;+rowADR1.ToString)]" DisplayName="Filter" HasHeaders="True" sap:VirtualizedContainerService.HintSize="880,178" sap2010:WorkflowViewState.IdRef="FilterX_3" Range="[Excel.Sheet(sheet)]">
+                      <ueab:FilterX ClearFilter="False" ColumnName="[Excel.Sheet(Sheet).Cell(&quot;E1&quot;)]" DisplayName="Filter" HasHeaders="True" sap:VirtualizedContainerService.HintSize="880,178" sap2010:WorkflowViewState.IdRef="FilterX_3" Range="[Excel.Sheet(sheet)]">
                         <ueab:FilterX.FilterArgument>
                           <ueabf:FilterArgument Mode="Basic">
                             <ueabf:FilterArgument.AdvancedFiltersArgument>
@@ -413,7 +404,7 @@
                         </ueab:FilterX.FilterArgument>
                       </ueab:FilterX>
                       <ueab:DeleteRowsX DeleteRowsOption="Visible" DisplayName="Delete Rows" HasHeaders="True" sap:VirtualizedContainerService.HintSize="880,147" sap2010:WorkflowViewState.IdRef="DeleteRowsX_1" Range="[Excel.Sheet(sheet)]" RowPositions="[rowAddr.ToString]" />
-                      <ueab:FilterX ClearFilter="True" ColumnName="[Excel.Sheet(Sheet).Cell(&quot;E&quot;+(rowADR1+1).ToString)]" DisplayName="Filter" HasHeaders="True" sap:VirtualizedContainerService.HintSize="880,178" sap2010:WorkflowViewState.IdRef="FilterX_4" Range="[Excel.Sheet(sheet)]">
+                      <ueab:FilterX ClearFilter="True" ColumnName="[Excel.Sheet(Sheet).Cell(&quot;E1&quot;)]" DisplayName="Filter" HasHeaders="True" sap:VirtualizedContainerService.HintSize="880,178" sap2010:WorkflowViewState.IdRef="FilterX_4" Range="[Excel.Sheet(sheet)]">
                         <ueab:FilterX.FilterArgument>
                           <ueabf:FilterArgument Mode="Basic">
                             <ueabf:FilterArgument.AdvancedFiltersArgument>
