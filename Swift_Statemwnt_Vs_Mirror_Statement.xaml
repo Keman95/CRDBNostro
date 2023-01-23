@@ -5,11 +5,12 @@
     <x:Property Name="out_NostroStatementFileLocation" Type="OutArgument(x:String)" />
     <x:Property Name="In_CITRIX_FilePath" Type="InArgument(x:String)" />
     <x:Property Name="In_NostroStatementFileName" Type="InArgument(x:String)" />
+    <x:Property Name="ln_NostroStatement_FilePath" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>917,1785</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>685,1716</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Swift_Statemwnt_Vs_Mirror_Statement_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -104,10 +105,8 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Swift_Statemwnt_Vs_Mirror_Statement" sap:VirtualizedContainerService.HintSize="695,1720" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Swift_Statemwnt_Vs_Mirror_Statement" sap:VirtualizedContainerService.HintSize="695,1651" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="C:\Users\RPA\Desktop\TestFolder" Name="NostroStatement_FilePath" />
-      <Variable x:TypeArguments="x:String" Name="NostroStatement_FileName" />
       <Variable x:TypeArguments="x:String" Name="Text" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtMT950" />
     </Sequence.Variables>
@@ -116,42 +115,46 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Sequence (Converting the .txt file to an Excel file)" sap:VirtualizedContainerService.HintSize="633,1598" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="Sequence (Converting the .txt file to an Excel file)" sap:VirtualizedContainerService.HintSize="633,1540" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ReadTextFile File="{x:Null}" Content="[Text]" DisplayName="Read Text File" FileName="[NostroStatement_FilePath+&quot;\&quot;+In_NostroStatementFileName+&quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="571,89" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-      <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="False" ColumnSeparators=":" DataTable="[dtMT950]" DisplayName="Generate Data Table" sap:VirtualizedContainerService.HintSize="571,210" sap2010:WorkflowViewState.IdRef="GenerateDataTable_2" Input="[Text.Trim]" />
-      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="571,1097" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+      <ui:ReadTextFile File="{x:Null}" Content="[Text]" DisplayName="Read Text File" FileName="[ln_NostroStatement_FilePath+&quot;\&quot;+In_NostroStatementFileName+&quot;.txt&quot;]" sap:VirtualizedContainerService.HintSize="571,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+      <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="False" ColumnSeparators=":" DataTable="[dtMT950]" DisplayName="Generate Data Table" sap:VirtualizedContainerService.HintSize="571,201" sap2010:WorkflowViewState.IdRef="GenerateDataTable_2" Input="[Text.Trim]" />
+      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="571,1068" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
         <ueab:ExcelProcessScopeX.Body>
           <ActivityAction x:TypeArguments="ui:IExcelProcess">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do (Open and use the newly created excel file)" sap:VirtualizedContainerService.HintSize="537,1001" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Do (Open and use the newly created excel file)" sap:VirtualizedContainerService.HintSize="537,981" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="475,879" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="Maximize" WorkbookPath="[NostroStatement_FilePath+&quot;\&quot;+In_NostroStatementFileName+&quot;.xlsx&quot;]">
+              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="530,865" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="Maximize" WorkbookPath="[ln_NostroStatement_FilePath+&quot;\&quot;+In_NostroStatementFileName+&quot;.xlsx&quot;]">
                 <ueab:ExcelApplicationCard.Body>
                   <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="441,601" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,596" sap2010:WorkflowViewState.IdRef="Sequence_2">
                       <Sequence.Variables>
-                        <Variable x:TypeArguments="x:String" Default="[NostroStatement_FilePath+&quot;\&quot;+In_NostroStatementFileName+&quot;.xlsx&quot;]" Name="NostroStatemet_WorkFilePath" />
+                        <Variable x:TypeArguments="x:String" Name="NostroStatemet_WorkFilePath">
+                          <Variable.Default>
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ln_NostroStatement_FilePath+&quot;\&quot;+In_NostroStatementFileName+&quot;.xlsx&quot;" />
+                          </Variable.Default>
+                        </Variable>
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="379,70" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[out_NostroStatementFileLocation]</OutArgument>
                         </Assign.To>
@@ -159,7 +162,7 @@
                           <InArgument x:TypeArguments="x:String">[NostroStatemet_WorkFilePath]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="379,70" sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[out_NostroStatementFileName]</OutArgument>
                         </Assign.To>
@@ -167,7 +170,7 @@
                           <InArgument x:TypeArguments="x:String">[In_NostroStatementFileName]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:ExcelWriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[dtMT950]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="379,97" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="Sheet1">
+                      <ui:ExcelWriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[dtMT950]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="Sheet1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -175,7 +178,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelWriteRange>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Iterating_Nostro_Statement-Knocking off the Deals from corresponding Mirror Account - Copy (1).xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Iterating_Nostro_Statement-Knocking off the Deals from corresponding Mirror Account - Copy (1).xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Iterating_Nostro_Statement-Knocking off the Deals from corresponding Mirror Account - Copy (1).xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Iterating_Nostro_Statement-Knocking off the Deals from corresponding Mirror Account - Copy (1).xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="x:String" x:Key="In_ExcelFile">[NostroStatemet_WorkFilePath]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="In_CITRIX_File">[In_CITRIX_FilePath]</InArgument>
