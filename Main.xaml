@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,4949" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="957,4949" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="40">
       <x:String>System.Activities</x:String>
@@ -162,11 +162,21 @@
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Knocking off the deals and Forexes from the Nostro Statement and the Mirror Statement" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Swift_Statemwnt_Vs_Mirror_Statement.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <OutArgument x:TypeArguments="x:String" x:Key="out_NostroStatementFilePath" />
-                              <OutArgument x:TypeArguments="x:String" x:Key="out_NostroStatementFileName">[strNew_Nostrotatement_FileName]</OutArgument>
-                              <OutArgument x:TypeArguments="x:String" x:Key="out_NostroStatementFileLocation">[NostroStatement_WorkFilepath]</OutArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_CITRIX_FilePath">[CurrentFile.ToString]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_NostroStatementFileName">CITIUSD SWIFT File for 28th October 2022</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="ln_NostroStatement_FilePath">[FolderPath]</InArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_NostroStatementFileName">
+                                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="strNew_Nostrotatement_FileName" />
+                              </OutArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_NostroStatementFileLocation">
+                                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="NostroStatement_WorkFilepath" />
+                              </OutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_CITRIX_FilePath">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentFile.ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_NostroStatementFileName">
+                                <Literal x:TypeArguments="x:String">CITIUSD SWIFT File for 28th October 2022</Literal>
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="ln_NostroStatement_FilePath">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="FolderPath" />
+                              </InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Mirror_Statement_Vs_Nostro_Statememt_KnockingOff_DebitsandCreditsFromBothStatements.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="Mirror_Statement_Vs_Nostro_Statememt_KnockingOff_DebitsandCreditsFromBothStatements.xaml">
@@ -178,42 +188,22 @@
                           <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="All" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="379,133" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="Microsoft Excel" />
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Nostro_Recon_File_VS_Mirror_Statement.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="Nostro_Recon_File_VS_Mirror_Statement.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Destination_FilePath" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">
-                                <Literal x:TypeArguments="x:String">CITIUSD</Literal>
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_CITRIX_FilePath">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="FolderPath+&quot;\Citius profits statement dd 28 oct 2022.xlsx&quot;" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_Section">
-                                <Literal x:TypeArguments="x:String">THEIR CREDIT NOT YET PASSED BY US</Literal>
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_strDCMark">
-                                <Literal x:TypeArguments="x:String">D</Literal>
-                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[Destination_FilePath]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">CITIUSD</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_CITRIX_FilePath">[FolderPath+"\Citius profits statement dd 28 oct 2022.xlsx"]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_Section">THEIR CREDIT NOT YET PASSED BY US</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_strDCMark">D</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                           <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="All" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="379,133" sap2010:WorkflowViewState.IdRef="KillProcess_20" ProcessName="Microsoft Excel" />
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Nostro_Recon_File_VS_Mirror_Statement.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="Nostro_Recon_File_VS_Mirror_Statement.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Destination_FilePath" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">
-                                <Literal x:TypeArguments="x:String">CITIUSD</Literal>
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_CITRIX_FilePath">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="FolderPath+&quot;\Citius profits statement dd 28 oct 2022.xlsx&quot;" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_Section">
-                                <Literal x:TypeArguments="x:String" xml:space="preserve">THEIR DEBIT ENTRIES NOT YET PASSED BY US
-</Literal>
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_strDCMark">
-                                <Literal x:TypeArguments="x:String">C</Literal>
-                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[Destination_FilePath]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">CITIUSD</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_CITRIX_FilePath">[FolderPath+"\Citius profits statement dd 28 oct 2022.xlsx"]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_Section" xml:space="preserve">THEIR DEBIT ENTRIES NOT YET PASSED BY US
+</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_strDCMark">C</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                           <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="All" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="379,133" sap2010:WorkflowViewState.IdRef="KillProcess_19" ProcessName="Microsoft Excel" />
@@ -228,21 +218,11 @@
                           <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="All" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="379,133" sap2010:WorkflowViewState.IdRef="KillProcess_3" ProcessName="Microsoft Excel" />
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Iterating_Nostro_Statement - Entering New Credits in recon File.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Iterating_Nostro_Statement - Entering New Credits in recon File.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_ExcelFile">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="NostroStatement_WorkFilepath" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_Recon_File">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Destination_FilePath" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">
-                                <Literal x:TypeArguments="x:String">CITIUSD</Literal>
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_Section">
-                                <Literal x:TypeArguments="x:String">THEIR CREDIT NOT YET PASSED BY US</Literal>
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_DCMark">
-                                <Literal x:TypeArguments="x:String">C</Literal>
-                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_ExcelFile">[NostroStatement_WorkFilepath]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Recon_File">[Destination_FilePath]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">CITIUSD</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_Section">THEIR CREDIT NOT YET PASSED BY US</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_DCMark">C</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -254,22 +234,12 @@
                           <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="All" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="379,133" sap2010:WorkflowViewState.IdRef="KillProcess_21" ProcessName="Microsoft Excel" />
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Iterating_Nostro_Statement - Entering New Credits in recon File.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_34" UnSafe="False" WorkflowFileName="Iterating_Nostro_Statement - Entering New Credits in recon File.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_ExcelFile">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="NostroStatement_WorkFilepath" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_Recon_File">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Destination_FilePath" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">
-                                <Literal x:TypeArguments="x:String">CITIUSD</Literal>
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_Section">
-                                <Literal x:TypeArguments="x:String" xml:space="preserve">THEIR DEBIT ENTRIES NOT YET PASSED BY US
-</Literal>
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_DCMark">
-                                <Literal x:TypeArguments="x:String">D</Literal>
-                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_ExcelFile">[NostroStatement_WorkFilepath]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Recon_File">[Destination_FilePath]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">CITIUSD</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_Section" xml:space="preserve">THEIR DEBIT ENTRIES NOT YET PASSED BY US
+</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_DCMark">D</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
