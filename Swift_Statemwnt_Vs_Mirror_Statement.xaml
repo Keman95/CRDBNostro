@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>685,1822</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>928,1822</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Swift_Statemwnt_Vs_Mirror_Statement_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="56">
@@ -176,16 +176,26 @@
                       </ui:ExcelWriteRange>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Iterating_Nostro_Statement-Knocking off the Deals from corresponding Mirror Account - Remaining Forex Deals.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Iterating_Nostro_Statement-Knocking off the Deals from corresponding Mirror Account - Remaining Forex Deals.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="In_ExcelFile">[NostroStatemet_WorkFilePath]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="In_CITRIX_File">[In_CITRIX_FilePath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="In_ExcelFile">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="NostroStatemet_WorkFilePath" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="In_DCMark">
+                            <Literal x:TypeArguments="x:String">C</Literal>
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="In_Citrix_FilePath">
+                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_CITRIX_FilePath" />
+                          </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Iterating_Nostro_Statement-Knocking off the Deals from corresponding Mirror Account - Remaining Forex Deals.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Iterating_Nostro_Statement-Knocking off the Deals from corresponding Mirror Account - Remaining Forex Deals.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Iterating_Nostro_Statement-Knocking off the Deals from corresponding Mirror Account - Remaining Forex Deals.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Iterating_Nostro_Statement-Knocking off the Deals from corresponding Mirror Account - Remaining Forex Deals.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="x:String" x:Key="In_ExcelFile">
                             <VisualBasicValue x:TypeArguments="x:String" ExpressionText="NostroStatemet_WorkFilePath" />
                           </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="In_CITRIX_File">
+                          <InArgument x:TypeArguments="x:String" x:Key="In_DCMark">
+                            <Literal x:TypeArguments="x:String">D</Literal>
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="In_Citrix_FilePath">
                             <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_CITRIX_FilePath" />
                           </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
