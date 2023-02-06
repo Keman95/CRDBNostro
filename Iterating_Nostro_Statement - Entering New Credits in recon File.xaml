@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1522,7769</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1522,8159</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Iterating_Nostro_Statement_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="70">
@@ -115,7 +115,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Iterating_Nostro_Statement" sap:VirtualizedContainerService.HintSize="1532,7704" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Iterating_Nostro_Statement" sap:VirtualizedContainerService.HintSize="1532,8094" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:GenericValue" Name="Row_Value" />
       <Variable x:TypeArguments="x:String" Name="Key" />
@@ -131,13 +131,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="1470,7593" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="1470,7983" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="1436,7506" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence sap:VirtualizedContainerService.HintSize="1436,7896" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -668,23 +668,57 @@
                 </ueab:ExcelApplicationCard.Body>
               </ueab:ExcelApplicationCard>
             </Sequence>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="NostroReconFile_In_NostroStatement_NewCredits.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1271,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="NostroReconFile_In_NostroStatement_NewCredits.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[In_Recon_File]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="In_Date">[strDate]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="In_Amount">[strAmount]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="In_Ref">[strRef]</InArgument>
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="In_Dtbl">[newDTBL]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">[in_Sheet]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_Section">[in_Section]</InArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:InvokeWorkflowFile>
+            <If Condition="[newDTBL.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="1374,503" sap2010:WorkflowViewState.IdRef="If_6">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="441,224" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="NostroReconFile_In_NostroStatement_NewCredits.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="NostroReconFile_In_NostroStatement_NewCredits.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_Recon_File" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="In_Date">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDate" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="In_Amount">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAmount" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="In_Ref">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strRef" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="sd:DataTable" x:Key="In_Dtbl">
+                        <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="newDTBL" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Sheet" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Section">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Section" />
+                      </InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
           </Sequence>
         </ActivityAction>
       </ueab:ExcelProcessScopeX.Body>

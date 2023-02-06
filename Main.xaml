@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,5371" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,4532" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="40">
       <x:String>System.Activities</x:String>
@@ -105,15 +105,27 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="886,5306" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="831,4467" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="C:\Users\Jeremiah-Keman\Desktop\CRDB Docs-20230122T175124Z-001\CRDB Docs\31-10-2022\Nost Reco Report 31st.xlsx" Name="Source_FilePath" />
-      <Variable x:TypeArguments="x:String" Default="C:\Users\Jeremiah-Keman\Desktop\CRDB Docs-20230122T175124Z-001\CRDB Docs\31-10-2022\Nostro Recon Report 28-10-2022.xlsx" Name="Destination_FilePath" />
+      <Variable x:TypeArguments="x:String" Name="Source_FilePath">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">C:\Users\Jeremiah-Keman\Desktop\CRDB Docs-20230122T175124Z-001\CRDB Docs\31-10-2022\Nostro Reco Report 31st.xlsx</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="Destination_FilePath">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">C:\Users\Jeremiah-Keman\Desktop\CRDB Docs-20230122T175124Z-001\CRDB Docs\31-10-2022\Nostro Reco Report 1st Nov.xlsx</Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="NostroStatement_WorkFilepath" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtNostro_Statement" />
       <Variable x:TypeArguments="x:String" Name="strNew_NostroStatement" />
       <Variable x:TypeArguments="x:String" Default="CITIUS33 SWIFT MT940 STATEMENT 1 NOV 2022" Name="strNew_Nostrotatement_FileName" />
-      <Variable x:TypeArguments="x:String" Default="C:\Users\Jeremiah-Keman\Desktop\CRDB Docs-20230122T175124Z-001\CRDB Docs\31-10-2022" Name="FolderPath" />
+      <Variable x:TypeArguments="x:String" Name="FolderPath">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">C:\Users\Jeremiah-Keman\Desktop\CRDB Docs-20230122T175124Z-001\CRDB Docs\31-10-2022</Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:Boolean" Name="res" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -121,7 +133,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CopyFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Creating the current day's Nostro Recon Report File " Destination="[Destination_FilePath]" DisplayName="Copy and updating File to current day's file name " sap:VirtualizedContainerService.HintSize="824,83" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[Source_FilePath]">
+    <ui:CopyFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Creating the current day's Nostro Recon Report File " Destination="[Destination_FilePath]" DisplayName="Copy and updating File to current day's file name " sap:VirtualizedContainerService.HintSize="769,83" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[Source_FilePath]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -130,7 +142,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CopyFile>
-    <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*.xlsx" Folder="[FolderPath]" sap:VirtualizedContainerService.HintSize="824,4585" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="True" OrderBy="CreationDateNewFirst" SkipFolderWithoutPermission="False">
+    <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*.xlsx" Folder="[FolderPath]" sap:VirtualizedContainerService.HintSize="769,4112" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="True" OrderBy="CreationDateNewFirst" SkipFolderWithoutPermission="False">
       <ui:ForEachFileX.Body>
         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
           <ActivityAction.Argument1>
@@ -139,26 +151,26 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
           </ActivityAction.Argument2>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="790,4335" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="735,3862" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="728,4224" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+            <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="673,3751" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
               <ui:IfElseIf.ConditionBlocks>
                 <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                   <ui:IfElseIfBlock BlockType="If" Condition="[CurrentFile.ToString.Equals(FolderPath+&quot;\PROFITS STATEMENT CITIUS33 1 NOV 2022.xlsx&quot;)]">
                     <ui:IfElseIfBlock.Then>
-                      <Sequence DisplayName="CITIUSD Reconciliation" sap:VirtualizedContainerService.HintSize="565,4029" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <Sequence DisplayName="CITIUSD Reconciliation" sap:VirtualizedContainerService.HintSize="565,3556" sap2010:WorkflowViewState.IdRef="Sequence_7">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Doing the Reconciliaions in the Nostro Recon File" sap:VirtualizedContainerService.HintSize="503,3918" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                        <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Doing the Reconciliaions in the Nostro Recon File" sap:VirtualizedContainerService.HintSize="503,3445" sap2010:WorkflowViewState.IdRef="Sequence_2">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:Int32" Default="0" Name="number" />
                           </Sequence.Variables>
@@ -169,66 +181,33 @@
                               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence sap2010:Annotation.AnnotationText="Reconciling current day's statements against each other." DisplayName="Seq1. " sap:VirtualizedContainerService.HintSize="441,738" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                          <Sequence sap2010:Annotation.AnnotationText="Reconciling current day's statements against each other." DisplayName="Seq1. " sap:VirtualizedContainerService.HintSize="441,112" sap2010:WorkflowViewState.IdRef="Sequence_16">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-                              <ui:CommentOut.Body>
-                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,244" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="All" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="KillProcess_22" ProcessName="Microsoft Excel">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </ui:KillProcess>
-                                </Sequence>
-                              </ui:CommentOut.Body>
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Knocking off the deals and Forexes from the Nostro Statement and the Mirror Statement" sap:VirtualizedContainerService.HintSize="379,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="Swift_Statemwnt_Vs_Mirror_Statement.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <OutArgument x:TypeArguments="x:String" x:Key="out_NostroStatementFilePath" />
+                                <OutArgument x:TypeArguments="x:String" x:Key="out_NostroStatementFileName">[strNew_Nostrotatement_FileName]</OutArgument>
+                                <OutArgument x:TypeArguments="x:String" x:Key="out_NostroStatementFileLocation">[NostroStatement_WorkFilepath]</OutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="In_CITRIX_FilePath">C:\Users\Jeremiah-Keman\Desktop\CRDB Docs-20230122T175124Z-001\CRDB Docs\31-10-2022\CITIUS33 PROFITS STATEMENT VALUE DATED 28 OCT 2022.xlsx</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="In_NostroStatementFileName">CITIUS33 SWIFT MT940 STATEMENT 1 NOV 2022</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="ln_NostroStatement_FilePath">[FolderPath]</InArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
+                            </ui:InvokeWorkflowFile>
+                            <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="All" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="379,52" sap2010:WorkflowViewState.IdRef="KillProcess_25" ProcessName="Microsoft Excel">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                            </ui:CommentOut>
-                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-                              <ui:CommentOut.Body>
-                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,224" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Knocking off the deals and Forexes from the Nostro Statement and the Mirror Statement" sap:VirtualizedContainerService.HintSize="338,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Swift_Statemwnt_Vs_Mirror_Statement.xaml">
-                                    <ui:InvokeWorkflowFile.Arguments>
-                                      <OutArgument x:TypeArguments="x:String" x:Key="out_NostroStatementFilePath" />
-                                      <OutArgument x:TypeArguments="x:String" x:Key="out_NostroStatementFileName">[strNew_Nostrotatement_FileName]</OutArgument>
-                                      <OutArgument x:TypeArguments="x:String" x:Key="out_NostroStatementFileLocation">[NostroStatement_WorkFilepath]</OutArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="In_CITRIX_FilePath">C:\Users\Jeremiah-Keman\Desktop\CRDB Docs-20230122T175124Z-001\CRDB Docs\31-10-2022\CITIUS33 PROFITS STATEMENT VALUE DATED 28 OCT 2022.xlsx</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="In_NostroStatementFileName">CITIUS33 SWIFT MT940 STATEMENT 1 NOV 2022</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="ln_NostroStatement_FilePath">[FolderPath]</InArgument>
-                                    </ui:InvokeWorkflowFile.Arguments>
-                                  </ui:InvokeWorkflowFile>
-                                </Sequence>
-                              </ui:CommentOut.Body>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:CommentOut>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Reconciling Debits on the SWIFT statement that have matching Credits on the Mirror Statement." DisplayName="Debits on SWIFT statement Vs Credits on Mirror Statment" sap:VirtualizedContainerService.HintSize="338,94" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="Mirror_Statement_Vs_Nostro_Statememt_KnockingOff_DebitsandCreditsFromBothStatements.xaml">
+                            </ui:KillProcess>
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Reconciling Debits on the SWIFT statement that have matching Credits on the Mirror Statement." DisplayName="Debits on SWIFT statement Vs Credits on Mirror Statment" sap:VirtualizedContainerService.HintSize="379,155" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="Mirror_Statement_Vs_Nostro_Statememt_KnockingOff_DebitsandCreditsFromBothStatements.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="x:String" x:Key="In_Citrix_FilePath">
                                   <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentFile.ToString" />
@@ -243,12 +222,12 @@
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:InvokeWorkflowFile>
-                            <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="All" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="Microsoft Excel">
+                            <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="All" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="379,52" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="Microsoft Excel">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -256,17 +235,11 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:KillProcess>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Reconciling Credits on the SWIFT statement that have matching Debits on the Mirror Statement." DisplayName="Credits on SWIFT statement Vs Debits on Mirror Statement" sap:VirtualizedContainerService.HintSize="338,94" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Mirror_Statement_Vs_Nostro_Statememt_KnockingOff_DebitsandCreditsFromBothStatements.xaml">
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Reconciling Credits on the SWIFT statement that have matching Debits on the Mirror Statement." DisplayName="Credits on SWIFT statement Vs Debits on Mirror Statement" sap:VirtualizedContainerService.HintSize="379,94" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Mirror_Statement_Vs_Nostro_Statememt_KnockingOff_DebitsandCreditsFromBothStatements.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="In_Citrix_FilePath">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentFile.ToString" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="In_Nostro_Statement_FilePath">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="NostroStatement_WorkFilepath" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="In_DC_Mark">
-                                  <Literal x:TypeArguments="x:String">C</Literal>
-                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="In_Citrix_FilePath">[CurrentFile.ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="In_Nostro_Statement_FilePath">[NostroStatement_WorkFilepath]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="In_DC_Mark">C</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -276,7 +249,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:InvokeWorkflowFile>
-                            <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="All" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="KillProcess_23" ProcessName="Microsoft Excel">
+                            <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" AppliesTo="All" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="379,52" sap2010:WorkflowViewState.IdRef="KillProcess_23" ProcessName="Microsoft Excel">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -285,14 +258,15 @@
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:KillProcess>
                           </Sequence>
-                          <Sequence sap2010:Annotation.AnnotationText="Knocking off left over entries from previous day." DisplayName="Seq2." sap:VirtualizedContainerService.HintSize="441,1398" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                          <Sequence sap2010:Annotation.AnnotationText="Knocking off left over entries from previous day." DisplayName="Seq2." sap:VirtualizedContainerService.HintSize="441,1490" sap2010:WorkflowViewState.IdRef="Sequence_17">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="From previous day, There were Credits on SWIFT statmenent that did not have corresponding matching debits on the Mirror Statement and were captured under the section &quot;Their Credits Not Passed By Us&quot;.  Those left over Credits will be matched against corresponding Debits on the current day's mirror statement " DisplayName="Knocking off Their previous day's left over Credits from current day Mirror Statement" sap:VirtualizedContainerService.HintSize="368,169" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="Nostro_Recon_File_VS_Mirror_Statement.xaml">
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="From previous day, There were Credits on SWIFT statmenent that did not have corresponding matching debits on the Mirror Statement and were captured under the section &quot;Their Credits Not Passed By Us&quot;.  Those left over Credits will be matched against corresponding Debits on the current day's mirror statement " DisplayName="Knocking off Their previous day's left over Credits from current day Mirror Statement" sap:VirtualizedContainerService.HintSize="368,215" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="Nostro_Recon_File_VS_Mirror_Statement.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">
                                   <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Destination_FilePath" />
@@ -313,7 +287,7 @@
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -328,21 +302,11 @@
                             </ui:KillProcess>
                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="On previous day, There were Debits on SWIFT statmenent that did not have corresponding matching debits on the Mirror Statement and were captured under the section &quot;Their Debits Not Passed By Us&quot;.  Those left over Credits will be matched against corresponding Credits on the current day's mirror statement " DisplayName="Knocking Their previous day's left over Debits from the Mirror Statement" sap:VirtualizedContainerService.HintSize="368,215" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="Nostro_Recon_File_VS_Mirror_Statement.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Destination_FilePath" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">
-                                  <Literal x:TypeArguments="x:String">CITIUSD</Literal>
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_CITRIX_FilePath">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentFile.ToString" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_Section">
-                                  <Literal x:TypeArguments="x:String">THEIR DEBIT ENTRIES NOT YET PASSED BY US</Literal>
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="In_strDCMark">
-                                  <Literal x:TypeArguments="x:String">C</Literal>
-                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[Destination_FilePath]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">CITIUSD</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_CITRIX_FilePath">[CurrentFile.ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_Section">THEIR DEBIT ENTRIES NOT YET PASSED BY US</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="In_strDCMark">C</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -362,18 +326,10 @@
                             </ui:KillProcess>
                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="From previous day, There were Credits on Mirror statmenent that did not have corresponding matching debits on the SWIFT Statement and were captured under the section &quot;Our Credits Not Passed By Us&quot;.  Those left over Credits will be matched against corresponding Debits on the current day's SWIFT statement " DisplayName="Knocking off Our previous day's left over Credits from their Present day Nostro Statement " sap:VirtualizedContainerService.HintSize="368,215" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Nostro_Recon_File_VS_Nostro_Statement.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Destination_FilePath" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_NostroStatement_FilePath">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="NostroStatement_WorkFilepath" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">
-                                  <Literal x:TypeArguments="x:String">CITIUSD</Literal>
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_Section">
-                                  <Literal x:TypeArguments="x:String">OUR CREDIT ENTRIES NOT YET PASSED BY THEM</Literal>
-                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[Destination_FilePath]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_NostroStatement_FilePath">[NostroStatement_WorkFilepath]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">CITIUSD</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_Section">OUR CREDIT ENTRIES NOT YET PASSED BY THEM</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -391,25 +347,17 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:KillProcess>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="From previous day, There were Debits on Mirror statmenent that did not have corresponding matching credits on the SWIFT Statement and were captured under the section &quot;Our Credits Not Passed By Us&quot;.  Those left over Debits will be matched against corresponding Credits on the current day's SWIFT statement " DisplayName="Knocking off Our previous day's left over Dedits from their Present day Nostro Statement " sap:VirtualizedContainerService.HintSize="368,169" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_38" UnSafe="False" WorkflowFileName="Nostro_Recon_File_VS_Nostro_Statement.xaml">
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="From previous day, There were Debits on Mirror statmenent that did not have corresponding matching credits on the SWIFT Statement and were captured under the section &quot;Our Credits Not Passed By Us&quot;.  Those left over Debits will be matched against corresponding Credits on the current day's SWIFT statement " DisplayName="Knocking off Our previous day's left over Dedits from their Present day Nostro Statement " sap:VirtualizedContainerService.HintSize="368,215" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_38" UnSafe="False" WorkflowFileName="Nostro_Recon_File_VS_Nostro_Statement.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Destination_FilePath" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_NostroStatement_FilePath">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="NostroStatement_WorkFilepath" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">
-                                  <Literal x:TypeArguments="x:String">CITIUSD</Literal>
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_Section">
-                                  <Literal x:TypeArguments="x:String">OUR DEBIT ENTRIES NOT YET PASSED BY THEM</Literal>
-                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[Destination_FilePath]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_NostroStatement_FilePath">[NostroStatement_WorkFilepath]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_Sheet">CITIUSD</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_Section">OUR DEBIT ENTRIES NOT YET PASSED BY THEM</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
@@ -423,14 +371,15 @@
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:KillProcess>
                           </Sequence>
-                          <Sequence sap2010:Annotation.AnnotationText="Capturing and entering current day's left over entries onto Nostro Recon Report" DisplayName="Seq3." sap:VirtualizedContainerService.HintSize="441,1137" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                          <Sequence sap2010:Annotation.AnnotationText="Capturing and entering current day's left over entries onto Nostro Recon Report" DisplayName="Seq3." sap:VirtualizedContainerService.HintSize="441,1229" sap2010:WorkflowViewState.IdRef="Sequence_18">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Capture the left over Credits from the SWIFT Statement after reconciliation and enter them on the Nostro Recon Report under section &quot;Their Credits Not Yet Passed By Them&quot;." DisplayName="Entering Current Day's Left Over Credits from Nostro Statement" sap:VirtualizedContainerService.HintSize="379,124" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Iterating_Nostro_Statement - Entering New Credits in recon File.xaml">
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Capture the left over Credits from the SWIFT Statement after reconciliation and enter them on the Nostro Recon Report under section &quot;Their Credits Not Yet Passed By Them&quot;." DisplayName="Entering Current Day's Left Over Credits from Nostro Statement" sap:VirtualizedContainerService.HintSize="379,170" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Iterating_Nostro_Statement - Entering New Credits in recon File.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="x:String" x:Key="In_ExcelFile">
                                   <VisualBasicValue x:TypeArguments="x:String" ExpressionText="NostroStatement_WorkFilepath" />
@@ -450,7 +399,7 @@
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                 </scg:Dictionary>
@@ -464,7 +413,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:KillProcess>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Capture the left over Debits from the SWIFT Statement after reconciliation and enter them on the Nostro Recon Report under section &quot;Their Debits Not Yet Passed By Us&quot;." DisplayName="Entering Current Day's Left Over Debits from Nostro Statement" sap:VirtualizedContainerService.HintSize="379,124" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="Iterating_Nostro_Statement - Entering New Credits in recon File.xaml">
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Capture the left over Debits from the SWIFT Statement after reconciliation and enter them on the Nostro Recon Report under section &quot;Their Debits Not Yet Passed By Us&quot;." DisplayName="Entering Current Day's Left Over Debits from Nostro Statement" sap:VirtualizedContainerService.HintSize="379,170" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="Iterating_Nostro_Statement - Entering New Credits in recon File.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="x:String" x:Key="In_ExcelFile">
                                   <VisualBasicValue x:TypeArguments="x:String" ExpressionText="NostroStatement_WorkFilepath" />
@@ -484,7 +433,7 @@
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                 </scg:Dictionary>
@@ -538,7 +487,7 @@
                                   <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Destination_FilePath" />
                                 </InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="In_CITRIX_FilePath">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentFile.ToString" />
+                                  <Literal x:TypeArguments="x:String">C:\Users\Jeremiah-Keman\Desktop\CRDB Docs-20230122T175124Z-001\CRDB Docs\31-10-2022\PROFITS STATEMENT CITIUS33 1 NOV 2022.xlsx</Literal>
                                 </InArgument>
                                 <InArgument x:TypeArguments="x:String" x:Key="In_Section">
                                   <Literal x:TypeArguments="x:String">OUR CREDIT ENTRIES NOT YET PASSED BY THEM</Literal>
@@ -556,31 +505,19 @@
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:InvokeWorkflowFile>
                           </Sequence>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Capturing the final balances from Current day's Mirror statement and SWIF statement and entering them on the respective fields in the Nostro Recon File." DisplayName="Final Balances on Statements" sap:VirtualizedContainerService.HintSize="441,170" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Workflow.xaml">
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Capturing the final balances from Current day's Mirror statement and SWIF statement and entering them on the respective fields in the Nostro Recon File." DisplayName="Final Balances on Statements" sap:VirtualizedContainerService.HintSize="441,139" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Workflow.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="NostroStatementFilePath">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="NostroStatement_WorkFilepath" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="MirrorStatementFilePath">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentFile.ToString" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="NostroReconFilePath">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Destination_FilePath" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_Sheet2">
-                                <Literal x:TypeArguments="x:String">CITIUSD</Literal>
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_Section2">
-                                <Literal x:TypeArguments="x:String">BALANCE ON OUR LEDGER</Literal>
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_Section3">
-                                <Literal x:TypeArguments="x:String">CITI USD A/C STATEMENT BALANCE</Literal>
-                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="NostroStatementFilePath">[NostroStatement_WorkFilepath]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="MirrorStatementFilePath">[CurrentFile.ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="NostroReconFilePath">[Destination_FilePath]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Sheet2">CITIUSD</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Section2">BALANCE ON OUR LEDGER</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_Section3">CITI USD A/C STATEMENT BALANCE</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -642,10 +579,11 @@
         </ActivityAction>
       </ui:ForEachFileX.Body>
     </ui:ForEachFileX>
-    <Sequence DisplayName="Email Sending Sequence" sap:VirtualizedContainerService.HintSize="824,447" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Email Sending Sequence" sap:VirtualizedContainerService.HintSize="769,81" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,336" sap2010:WorkflowViewState.IdRef="CommentOut_1">
