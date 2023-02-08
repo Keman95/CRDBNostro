@@ -480,7 +480,7 @@
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <If Condition="[strComments.Contains(In_Naration_Ref)]" sap:VirtualizedContainerService.HintSize="579,926" sap2010:WorkflowViewState.IdRef="If_4">
+                                              <If Condition="[strAmount = In_Amount AND 1 = 1]" sap:VirtualizedContainerService.HintSize="579,926" sap2010:WorkflowViewState.IdRef="If_4">
                                                 <If.Then>
                                                   <Sequence DisplayName="Knockoff the transaction in both statements" sap:VirtualizedContainerService.HintSize="501,614" sap2010:WorkflowViewState.IdRef="Sequence_21">
                                                     <sap:WorkflowViewStateService.ViewState>
@@ -496,13 +496,13 @@
                                                         <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                                                       </Assign.Value>
                                                     </Assign>
-                                                    <ueab:WriteCellX Cell="[Excel.Sheet(Sheet).Cell(&quot;R&quot;+rowAddr.ToString)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="439,159" sap2010:WorkflowViewState.IdRef="WriteCellX_2" Value="[&quot;Matched on Recon Report&quot;]" />
+                                                    <ueab:WriteCellX Cell="[Excel.Sheet(Sheet).Cell(&quot;R&quot;+rowAddr.ToString)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="439,159" sap2010:WorkflowViewState.IdRef="WriteCellX_2" Value="[&quot;Conflicting_References&quot;]" />
                                                     <ueab:FormatRangeX DisplayName="Format Cells" sap:VirtualizedContainerService.HintSize="439,138" sap2010:WorkflowViewState.IdRef="FormatRangeX_2" Range="[Excel.Sheet(Sheet).Range(&quot;A&quot;+rowAddr.ToString+&quot;:Q&quot;+rowAddr.ToString)]">
                                                       <ueab:FormatRangeX.Alignment>
                                                         <ui:AlignmentOptions HorizontalAlignment="xlHAlignGeneral" VerticalAlignment="xlVAlignBottom" WrapText="False" />
                                                       </ueab:FormatRangeX.Alignment>
                                                       <ueab:FormatRangeX.Font>
-                                                        <ui:FontOptions Color="Black" FillColor="Green" FontFamilyName="Calibri" Size="11" Style="Regular" />
+                                                        <ui:FontOptions Color="Black" FillColor="Orange" FontFamilyName="Calibri" Size="11" Style="Regular" />
                                                       </ueab:FormatRangeX.Font>
                                                       <ueab:FormatRangeX.Format>
                                                         <ueab:GeneralFormat />
