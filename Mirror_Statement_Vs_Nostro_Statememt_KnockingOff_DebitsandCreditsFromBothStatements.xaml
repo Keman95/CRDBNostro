@@ -67,7 +67,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="62">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="124">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -129,6 +129,12 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap:VirtualizedContainerService.HintSize="1358,8042" sap2010:WorkflowViewState.IdRef="Sequence_52">
@@ -348,7 +354,7 @@
                                             <InArgument x:TypeArguments="x:String">[strAmount.Replace(",",".")]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <Assign sap:VirtualizedContainerService.HintSize="618,61" sap2010:WorkflowViewState.IdRef="Assign_24">
+                                        <Assign sap:VirtualizedContainerService.HintSize="618,61" sap2010:WorkflowViewState.IdRef="Assign_55">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:String">[Decimals]</OutArgument>
                                           </Assign.To>
@@ -356,7 +362,7 @@
                                             <InArgument x:TypeArguments="x:String">[strAmount.Substring((strAmount.IndexOf(".")),3)]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <If Condition="[Decimals.Contains(&quot;00&quot;) = True]" sap:VirtualizedContainerService.HintSize="618,979" sap2010:WorkflowViewState.IdRef="If_8">
+                                        <If Condition="[Decimals = &quot;00&quot;]" sap:VirtualizedContainerService.HintSize="618,979" sap2010:WorkflowViewState.IdRef="If_8">
                                           <If.Then>
                                             <Sequence sap:VirtualizedContainerService.HintSize="400,172" sap2010:WorkflowViewState.IdRef="Sequence_73">
                                               <sap:WorkflowViewStateService.ViewState>
