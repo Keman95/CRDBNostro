@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>917,3249</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1017,3279</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Workflow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -99,7 +99,7 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Entering Last Balance from " sap:VirtualizedContainerService.HintSize="760,3184" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Entering Last Balance from " sap:VirtualizedContainerService.HintSize="760,3214" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="FRowNumber" />
       <Variable x:TypeArguments="x:Int32" Name="LRowNumber" />
@@ -114,19 +114,19 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="698,3062" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="698,3103" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="664,2966" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence sap:VirtualizedContainerService.HintSize="664,3016" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="602,2844" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="602,2905" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Default="Sheet1" Name="Sheet1" />
               </Sequence.Variables>
@@ -136,13 +136,13 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File Mirror Statement" sap:VirtualizedContainerService.HintSize="540,90" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" TemplatePath="Citius profits statement dd 28 oct 2022.xlsx" WorkbookPath="[MirrorStatementFilePath]">
+              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File Mirror Statement" sap:VirtualizedContainerService.HintSize="540,81" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" TemplatePath="Citius profits statement dd 28 oct 2022.xlsx" WorkbookPath="[MirrorStatementFilePath]">
                 <ueab:ExcelApplicationCard.Body>
                   <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="506,753" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="506,733" sap2010:WorkflowViewState.IdRef="Sequence_2">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Default="Account Statement" Name="Sheet" />
                         <Variable x:TypeArguments="x:String" Name="strSwiftStatement_LastBalance" />
@@ -153,13 +153,13 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ueab:FindFirstLastDataRowX BlankRowsToSkip="1" ColumnName="[Excel.Sheet(&quot;Account Statement&quot;).Cell(&quot;H24&quot;)]" ConfigureLastRowAs="LastPopulatedRow" DisplayName="Find First/Last Data Row" FirstRowIndex="[FRowNumber]" FirstRowOffset="0" HasHeaders="True" sap:VirtualizedContainerService.HintSize="444,313" sap2010:WorkflowViewState.IdRef="FindFirstLastDataRowX_1" LastRowIndex="[LRowNumber]" LastRowOffset="0" Range="[Excel.Sheet(Sheet).Range(&quot;A24:Z1000&quot;)]" />
-                      <ueab:ReadCellValueX Cell="[Excel.Sheet(Sheet).Cell(&quot;H&quot;+LRowNumber.ToString)]" DisplayName="Read Cell Value" GetFormattedText="False" sap:VirtualizedContainerService.HintSize="444,168" sap2010:WorkflowViewState.IdRef="ReadCellValueX_1">
+                      <ueab:FindFirstLastDataRowX BlankRowsToSkip="1" ColumnName="[Excel.Sheet(&quot;Account Statement&quot;).Cell(&quot;H24&quot;)]" ConfigureLastRowAs="LastPopulatedRow" DisplayName="Find First/Last Data Row" FirstRowIndex="[FRowNumber]" FirstRowOffset="0" HasHeaders="True" sap:VirtualizedContainerService.HintSize="444,304" sap2010:WorkflowViewState.IdRef="FindFirstLastDataRowX_1" LastRowIndex="[LRowNumber]" LastRowOffset="0" Range="[Excel.Sheet(Sheet).Range(&quot;A24:Z1000&quot;)]" />
+                      <ueab:ReadCellValueX Cell="[Excel.Sheet(Sheet).Cell(&quot;H&quot;+LRowNumber.ToString)]" DisplayName="Read Cell Value" GetFormattedText="False" sap:VirtualizedContainerService.HintSize="444,159" sap2010:WorkflowViewState.IdRef="ReadCellValueX_1">
                         <ueab:ReadCellValueX.SaveTo>
                           <OutArgument x:TypeArguments="ui:GenericValue">[SwiftStatement_LastBalance]</OutArgument>
                         </ueab:ReadCellValueX.SaveTo>
                       </ueab:ReadCellValueX>
-                      <Assign sap:VirtualizedContainerService.HintSize="444,70" sap2010:WorkflowViewState.IdRef="Assign_6">
+                      <Assign sap:VirtualizedContainerService.HintSize="444,61" sap2010:WorkflowViewState.IdRef="Assign_6">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[MirrorStatement_LastBalance]</OutArgument>
                         </Assign.To>
@@ -177,26 +177,27 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ueab:ExcelApplicationCard>
-              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File Nostro Statement" sap:VirtualizedContainerService.HintSize="540,1291" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" TemplatePath="Citius profits statement dd 28 oct 2022.xlsx" WorkbookPath="[NostroStatementFilePath]">
+              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File Nostro Statement" sap:VirtualizedContainerService.HintSize="540,1419" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" TemplatePath="Citius profits statement dd 28 oct 2022.xlsx" WorkbookPath="[NostroStatementFilePath]">
                 <ueab:ExcelApplicationCard.Body>
                   <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="506,1013" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="506,1150" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Default="Account Statement" Name="Sheet" />
                         <Variable x:TypeArguments="x:Int32" Name="hash" />
                         <Variable x:TypeArguments="x:String" Name="CellADR" />
                         <Variable x:TypeArguments="x:Int32" Name="RowADR" />
+                        <Variable x:TypeArguments="x:String" Name="ColonChar" />
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ueab:FindReplaceValueX ReplaceWith="{x:Null}" DisplayName="Find/Replace Value" FoundAt="[CellADR]" sap:VirtualizedContainerService.HintSize="444,243" sap2010:WorkflowViewState.IdRef="FindReplaceValueX_1" LookIn="Values" Operation="Find" ValueToFind="[&quot;Closing Available Balance (Available Funds)&quot;]" WhereToSearch="[Excel.Sheet(Sheet1).Range(&quot;A1&quot;)]" />
-                      <Assign sap:VirtualizedContainerService.HintSize="444,70" sap2010:WorkflowViewState.IdRef="Assign_7">
+                      <ueab:FindReplaceValueX ReplaceWith="{x:Null}" DisplayName="Find/Replace Value" FoundAt="[CellADR]" sap:VirtualizedContainerService.HintSize="444,234" sap2010:WorkflowViewState.IdRef="FindReplaceValueX_1" LookIn="Values" Operation="Find" ValueToFind="[&quot;Amount&quot;]" WhereToSearch="[Excel.Sheet(Sheet1).Range(&quot;A1&quot;)]" />
+                      <Assign sap:VirtualizedContainerService.HintSize="444,61" sap2010:WorkflowViewState.IdRef="Assign_7">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[RowADR]</OutArgument>
                         </Assign.To>
@@ -204,28 +205,44 @@
                           <InArgument x:TypeArguments="x:Int32">[CInt(System.Text.RegularExpressions.Regex.Replace(CellADR,"\D",""))]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ueab:ReadCellValueX Cell="[Excel.Sheet(Sheet1).Cell(&quot;A&quot;+(RowADR+4).ToString)]" DisplayName="Read Cell Value" GetFormattedText="False" sap:VirtualizedContainerService.HintSize="444,168" sap2010:WorkflowViewState.IdRef="ReadCellValueX_2">
+                      <ueab:ReadCellValueX Cell="[Excel.Sheet(Sheet1).Cell(&quot;A&quot;+(RowADR).ToString)]" DisplayName="Read Cell Value" GetFormattedText="False" sap:VirtualizedContainerService.HintSize="444,159" sap2010:WorkflowViewState.IdRef="ReadCellValueX_2">
                         <ueab:ReadCellValueX.SaveTo>
                           <OutArgument x:TypeArguments="x:String">[NostroStatement_LastBalance]</OutArgument>
                         </ueab:ReadCellValueX.SaveTo>
                       </ueab:ReadCellValueX>
-                      <Assign sap:VirtualizedContainerService.HintSize="444,70" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign sap:VirtualizedContainerService.HintSize="444,61" sap2010:WorkflowViewState.IdRef="Assign_8">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[NostroStatement_LastBalance]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[NostroStatement_LastBalance.Split(":").Last.Trim]</InArgument>
+                          <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(NostroStatement_LastBalance,"\t\r\n","")]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="444,70" sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <Assign sap:VirtualizedContainerService.HintSize="444,61" sap2010:WorkflowViewState.IdRef="Assign_10">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[NostroStatement_LastBalance]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[NostroStatement_LastBalance.Split("#").First.Trim]</InArgument>
+                          <InArgument x:TypeArguments="x:String">[NostroStatement_LastBalance.Replace(" ","")]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="444,70" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign sap:VirtualizedContainerService.HintSize="444,61" sap2010:WorkflowViewState.IdRef="Assign_9">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[NostroStatement_LastBalance]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[NostroStatement_LastBalance.Remove(0,8)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="444,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[NostroStatement_LastBalance]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[NostroStatement_LastBalance.Split("C").First.Trim]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="444,61" sap2010:WorkflowViewState.IdRef="Assign_3">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[NostroStatement_LastBalance]</OutArgument>
                         </Assign.To>
@@ -243,13 +260,13 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ueab:ExcelApplicationCard>
-              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="540,1261" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" ResizeWindow="None" WorkbookPath="[NostroReconFilePath]">
+              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="540,1214" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" ResizeWindow="None" WorkbookPath="[NostroReconFilePath]">
                 <ueab:ExcelApplicationCard.Body>
                   <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,983" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,945" sap2010:WorkflowViewState.IdRef="Sequence_5">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Default="BALANCE ON OUR LEDGER" Name="Section1" />
                         <Variable x:TypeArguments="x:String" Name="cellADR" />
@@ -261,8 +278,8 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="434,97" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_1" Range="A1:Z10000" Result="[cellADR]" SheetName="[In_Sheet2]" Value="[In_Section2]" />
-                      <Assign sap:VirtualizedContainerService.HintSize="434,70" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_1" Range="A1:Z10000" Result="[cellADR]" SheetName="[In_Sheet2]" Value="[In_Section2]" />
+                      <Assign sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="Assign_4">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[RowAddr]</OutArgument>
                         </Assign.To>
@@ -270,7 +287,7 @@
                           <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(cellADR,"\D","")]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ueab:WriteCellX Cell="[Excel.Sheet(In_Sheet2).Cell(&quot;B&quot;+RowAddr)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[&quot;-&quot;+MirrorStatement_LastBalance]" />
+                      <ueab:WriteCellX Cell="[Excel.Sheet(In_Sheet2).Cell(&quot;B&quot;+RowAddr)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[&quot;-&quot;+MirrorStatement_LastBalance]" />
                       <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="434,97" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_2" Range="A1:Z10000" Result="[cellADR]" SheetName="[In_Sheet2]" Value="[In_Section3]" />
                       <Assign sap:VirtualizedContainerService.HintSize="434,70" sap2010:WorkflowViewState.IdRef="Assign_5">
                         <Assign.To>

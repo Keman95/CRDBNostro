@@ -130,6 +130,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>GlobalVariablesT1PNoYwrqg</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Nostro_Recon_values_Vs_Nostro_Statement_Values" sap:VirtualizedContainerService.HintSize="1704,6018" sap2010:WorkflowViewState.IdRef="Sequence_1">
